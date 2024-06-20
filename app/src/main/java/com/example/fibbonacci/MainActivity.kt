@@ -30,8 +30,11 @@ class FibonacciGenerator {
         val fibSequence = mutableListOf(0, 1)
         var a = 0
         var b = 1
-        for (i in 2 until n) {
+        while (fibSequence.size < n) {
             val sum = a + b
+            if (sum < 0) {
+                break
+            }
             fibSequence.add(sum)
             a = b
             b = sum
